@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive PNG Viewer</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #000; /* Black background to isolate image */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+    <style>
+        /* Reset margins and eliminate scrollbars */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #121212; /* Dark background to keep focus on the image */
+            display: flex;
+            justify-content: center; /* Horizontally centers the image */
+            align-items: center;     /* Vertically centers the image */
+            overflow: hidden;        /* Prevents accidental scrolling */
+        }
 
-    img {
-      display: block;
-      transition: all 0.3s ease; /* Smooth transition when rotating */
-    }
+        /* Responsive image wrapper */
+        .image-container {
+            max-width: 90%;          /* Leaves a clean 5% border on mobile sides */
+            max-height: 90%;         /* Leaves a clean 5% border on mobile top/bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    /* 1. PORTRAIT MODE (Vertical Screen) */
-    @media (orientation: portrait) {
-      img {
-        max-width: 90%;       /* Compact width so it fits within margins */
-        max-height: 80vh;     /* Keeps it contained vertically */
-        object-fit: contain;  /* Scales down cleanly without distortion */
-      }
-    }
-
-    /* 2. LANDSCAPE MODE (Horizontal Screen) */
-    @media (orientation: landscape) {
-      img {
-        width: auto;          /* Forces the image to ignore portrait constraints */
-        height: auto;         /* Displays at its true pixel dimensions */
-        max-width: none;      /* Allows it to overflow and be wide */
-        max-height: none;     /* Displays actual size */
-      }
-    }
-  </style>
+        /* Ensures the image scales down but never stretches past its original size */
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;     /* Maintains original image aspect ratio */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for a clean look */
+            border-radius: 4px;      /* Slightly softens sharp image corners */
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Replace with your actual PNG image file path or web link -->
-  <iframe src="https://drive.google.com/file/d/1mq2NRUxNlorBEvhSJ71hw33rvApX6tWY/preview"
+    <div class="image-container">
+        <img src="https://github.com/nurnasisa/my-shared-image/blob/main/KC.jpg" alt="Shared Image">
+    </div>
 
 </body>
 </html>
