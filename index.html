@@ -5,42 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Viewer</title>
     <style>
-        /* Reset margins and eliminate scrollbars */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #121212; /* Dark background to keep focus on the image */
+            background-color: #121212; /* Dark background to focus on the image */
             display: flex;
-            justify-content: center; /* Horizontally centers the image */
-            align-items: center;     /* Vertically centers the image */
-            overflow: hidden;        /* Prevents accidental scrolling */
+            justify-content: center; 
+            align-items: center;     
+            overflow: hidden;        
         }
-
-        /* Responsive image wrapper */
         .image-container {
-            max-width: 90%;          /* Leaves a clean 5% border on mobile sides */
-            max-height: 90%;         /* Leaves a clean 5% border on mobile top/bottom */
+            max-width: 95%;          
+            max-height: 95%;         
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
-        /* Ensures the image scales down but never stretches past its original size */
         img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain;     /* Maintains original image aspect ratio */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for a clean look */
-            border-radius: 4px;      /* Slightly softens sharp image corners */
+            object-fit: contain;     
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); 
+            border-radius: 4px;      
         }
     </style>
 </head>
 <body>
 
     <div class="image-container">
-        <img src="https://github.com/nurnasisa/my-shared-image/blob/main/KC.jpg" alt="Shared Image">
+        <!-- REPLACE photo.jpg WITH YOUR EXACT IMAGE FILE NAME -->
+        <img src="KC.jpg" alt="Shared Image">
     </div>
 
 </body>
