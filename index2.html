@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive PNG Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #000; /* Black background to isolate image */
+    }
+
+    img {
+      display: block;
+      transition: all 0.3s ease; /* Smooth transition when rotating */
+    }
+
+    /* 1. PORTRAIT MODE (Vertical Screen) */
+    @media (orientation: portrait) {
+      img {
+        max-width: 90%;       /* Compact width so it fits within margins */
+        max-height: 80vh;     /* Keeps it contained vertically */
+        object-fit: contain;  /* Scales down cleanly without distortion */
+      }
+    }
+
+    /* 2. LANDSCAPE MODE (Horizontal Screen) */
+    @media (orientation: landscape) {
+      img {
+        width: auto;          /* Forces the image to ignore portrait constraints */
+        height: auto;         /* Displays at its true pixel dimensions */
+        max-width: none;      /* Allows it to overflow and be wide */
+        max-height: none;     /* Displays actual size */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Replace with your actual PNG image file path or web link -->
+  <iframe src="https://drive.google.com/file/d/1mq2NRUxNlorBEvhSJ71hw33rvApX6tWY/preview"
+
+</body>
+</html>
